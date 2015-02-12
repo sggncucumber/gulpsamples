@@ -34,3 +34,10 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('dist/assets/js'))
     .pipe(notify({ message: 'Scripts task complete' }));
 });
+
+gulp.task('images', function() {
+  return gulp.src('src/images/**/*')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('dist/assets/img'))
+    .pipe(notify({ message: 'Images task complete' }));
+});
